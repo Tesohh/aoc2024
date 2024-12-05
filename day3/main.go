@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-var re1 = regexp.MustCompile(`(?m)mul\([0-9]*\,[0-9]*\)`)
-var re2 = regexp.MustCompile(`(?m)mul\([0-9]*\,[0-9]*\)|do\(\)|don\'t\(\)`)
+var re1 = regexp.MustCompile(`(?m)mul\([0-9]*\,[0-9]*\)`)                   // unethical regex
+var re2 = regexp.MustCompile(`(?m)mul\([0-9]*\,[0-9]*\)|do\(\)|don\'t\(\)`) // dishonourable and despicable regex
 
 func main() {
 	b, err := os.ReadFile("input.txt")
