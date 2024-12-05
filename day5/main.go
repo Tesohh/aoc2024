@@ -37,10 +37,14 @@ func main() {
 
 	for i, queue := range queues {
 		fmt.Println("Queue number", i)
-		if CheckQueue(queue, rules) {
+		if CheckQueue(queue, rules, true) {
 			sum1 += GetMiddle(queue)
 		} else {
-			sum2 += GetMiddle(SortedQueue(queue, rules))
+			if os.Args[2] == "bogo" {
+				sum2 += GetMiddle(BogosortQueue(queue, rules))
+			} else {
+				sum2 += GetMiddle(SortedQueue(queue, rules))
+			}
 		}
 		fmt.Println()
 	}
