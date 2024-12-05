@@ -5,6 +5,12 @@ import (
 	"os"
 )
 
+const MAS_SUM = 'M' + 'A' + 'S'
+
+func checkForXMAS(b []byte) bool {
+	return b[0]+b[1]+b[2] == MAS_SUM
+}
+
 func checkCrossword(grid [][]byte, x, y int, count *int) {
 	if grid[x][y] != 'X' {
 		return
