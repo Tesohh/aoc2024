@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// dumbest shit i've ever done but it works (and not even that bad)
+// dumbest shit i've ever done but it doesn't work
 func BogosortQueue(queue []int, rules []Rule) []int {
 	newQueue := make([]int, len(queue))
 	copy(newQueue, queue)
