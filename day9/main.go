@@ -30,4 +30,5 @@ func main() {
 
 	checksum := disk.Fragment().Checksum()
 	fmt.Printf("checksum: %v\n", checksum)
+	fmt.Printf("disk: %v\n", disk)
 }

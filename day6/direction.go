@@ -12,8 +12,7 @@ const (
 )
 
 func (d *Direction) Turn90Deg() {
-	(*d) += 1
-	(*d) %= 4
+	(*d) += 1 (*d) %= 4
 }
 
 func (d Direction) Vector() (x int, y int) {

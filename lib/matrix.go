@@ -27,3 +27,8 @@ func (m Matrix[T]) Traverse() []MatrixCell[T] {
 
 	return cells
 }
+
+// always check if out of bounds before this!
+func (m Matrix[T]) Point(p Point) T {
+	return m[p.Y][p.X]
+}

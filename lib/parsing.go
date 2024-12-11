@@ -3,6 +3,7 @@ package aoc
 import (
 	"bytes"
 	"os"
+	"strconv"
 )
 
 type Input struct {
@@ -32,9 +33,32 @@ func (i Input) LineStrings() []string {
 	return strs
 }
 
+func (i Input) Bytes() []byte {
+	return i.file
+}
+
 // Commonly used for maps
 func (i Input) CharMatrix() Matrix[byte] {
 	return Matrix[byte](i.Lines())
+}
+
+func (i Input) IntMatrix() Matrix[int] {
+	chargrid := i.CharMatrix()
+	grid := Matrix[int]{}
+
+	for y := range chargrid {
+		grid = append(grid, make([]int, len(chargrid[y])))
+		for x, char := range chargrid[y] {
+			if char == '.' {
+				grid[y][x] = -1
+			} else {
+				num, _ := strconv.Atoi(string(char))
+				grid[y][x] = num
+			}
+		}
+	}
+
+	return grid
 }
 
 func NewInputFromArgs() Input {
