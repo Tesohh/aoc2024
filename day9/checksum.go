@@ -12,3 +12,19 @@ func (disk Disk) Checksum() int {
 
 	return checksum
 }
+
+func (fdisk FileDisk) Checksum() int {
+	checksum := 0
+
+	for _, file := range fdisk.Files {
+		if file.Id == -1 {
+			continue
+		}
+
+		for i := file.X; i-file.X < file.Len; i++ {
+			checksum += i * file.Id
+		}
+	}
+
+	return checksum
+}

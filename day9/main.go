@@ -19,6 +19,10 @@ func tests() {
 	if disk.Fragment().Checksum() != 1928 {
 		panic(fmt.Sprintf("test failed during checksum %v", disk.Fragment().Checksum()))
 	}
+
+	// if disk.IntoFileDisk().FragmentFiles().String() != "00992111777.44.333....5555.6666.....8888.." {
+	// 	panic(fmt.Sprintf("test failed during FragmentFiles"))
+	// }
 }
 
 func main() {
@@ -27,8 +31,12 @@ func main() {
 	file := aoc.NewInputFromArgs().Bytes()
 
 	disk := NewDiskFromFile(file)
+	fdisk := disk.IntoFileDisk()
+	// fmt.Printf("disk:  %v\n", disk)
 
 	checksum := disk.Fragment().Checksum()
 	fmt.Printf("checksum: %v\n", checksum)
-	fmt.Printf("disk: %v\n", disk)
+
+	checksum2 := fdisk.FragmentFiles().Checksum()
+	fmt.Printf("checksum2: %v\n", checksum2)
 }
