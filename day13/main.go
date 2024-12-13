@@ -16,6 +16,8 @@ func main() {
 	// Button B: X+17, Y+44
 	// Prize: X=8105, Y=9698
 
+	// ZAPPUSH
+
 	input := aoc.NewInputFromArgs()
 	parts := input.Parts()
 
