@@ -8,8 +8,8 @@ import (
 
 // solves the following system
 //
-// { a_x * n + b_y * m = expect_x
-// { a_y * n + b_x * m = expect_y
+// { a_x * n + b_x * m = expect_x
+// { a_y * n + b_y * m = expect_y
 //
 // checking whether the results are correct is up to you. (or use CheckedCramer)
 // (there is no mechanism to check if the system is solvable)
