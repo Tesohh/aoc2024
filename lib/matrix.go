@@ -3,6 +3,22 @@ package aoc
 // Assumes that each row has the same length
 type Matrix[T any] [][]T
 
+func NewEmptyByteMatrix(width, height int) Matrix[byte] {
+	grid := make(Matrix[byte], height)
+	for i := 0; i < height; i++ {
+		grid[i] = make([]byte, width)
+	}
+	return grid
+}
+
+func (m Matrix[T]) Width() int {
+	return len(m[0])
+}
+
+func (m Matrix[T]) Height() int {
+	return len(m)
+}
+
 func (m Matrix[T]) IsOutOfBounds(p Point) bool {
 	xOut := p.X < 0 || p.X > len(m)-1
 	yOut := p.Y < 0 || p.Y > len(m[0])-1

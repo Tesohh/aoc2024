@@ -30,6 +30,7 @@ func (i Input) LineStrings() []string {
 	for _, line := range bytes.Split(i.file, []byte("\n")) {
 		strs = append(strs, string(line))
 	}
+	strs = strs[:len(strs)-1]
 	return strs
 }
 
