@@ -9,6 +9,7 @@ const (
 	Magenta      = "\033[35m"
 	Cyan         = "\033[36m"
 	Gray         = "\033[37m"
+	Faint        = "\033[0;30m"
 	White        = "\033[97m"
 	ClearConsole = "\033[H\033[2J"
 )
