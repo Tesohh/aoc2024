@@ -38,7 +38,7 @@ impl<T> GridExt<T> for Vec<Vec<T>> {
 
     fn is_out_point(&self, point: Vec2) -> bool {
         if point.x < 0 || point.y < 0 {
-            return false;
+            return true;
         }
         self.is_out(point.x as usize, point.y as usize)
     }

@@ -9,9 +9,9 @@ pub struct Input {
 
 impl Input {
     pub fn from_path(path: String) -> Self {
-        Input {
-            file: fs::read_to_string(path).unwrap(),
-        }
+        let mut file = fs::read_to_string(path).unwrap();
+        file.pop();
+        Input { file }
     }
 
     pub fn from_args() -> Self {

@@ -1,7 +1,15 @@
-#[derive(Debug, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
+use std::fmt::Display;
+
+#[derive(Debug, Hash, Copy, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Vec2 {
     pub x: i64,
     pub y: i64,
+}
+
+impl Display for Vec2 {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "Vec2 {{x:{}, y:{}}}", self.x, self.y)
+    }
 }
 
 impl Vec2 {
