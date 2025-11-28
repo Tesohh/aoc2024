@@ -75,6 +75,26 @@ impl Vec2 {
             _ => '?',
         }
     }
+
+    pub fn turn_90deg_clockwise(self) -> Self {
+        match self {
+            Self::UP => Self::RIGHT,
+            Self::DOWN => Self::LEFT,
+            Self::LEFT => Self::UP,
+            Self::RIGHT => Self::DOWN,
+            _ => panic!("attempted to turn a non directional vec2"),
+        }
+    }
+
+    pub fn turn_90deg_counter_clockwise(self) -> Self {
+        match self {
+            Self::UP => Self::LEFT,
+            Self::DOWN => Self::RIGHT,
+            Self::LEFT => Self::DOWN,
+            Self::RIGHT => Self::UP,
+            _ => panic!("attempted to turn a non directional vec2"),
+        }
+    }
 }
 
 #[cfg(test)]
